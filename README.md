@@ -1,9 +1,22 @@
 # benchy
 
-Benchy measures a Claude Code harness on one fixed task and reports what it built, what it cost and how long it took. A harness is plain Claude Code, or Claude Code with a plugin, tool servers or settings on top. Every harness gets the same instruction file and nothing else.
+## In short
 
-The task: build the same order-matching engine three times, in Rust, Go and C#, in one workspace. The three programs must print identical output for identical input.
+**What it does.** Benchy gives an AI coding setup one fixed job, then scores the result. The job is to build the same order-matching engine in Rust, Go and C#. Benchy checks whether the code is correct, fast, well tested and easy to read, and records what the run cost, how long it took and how many agents it used.
 
+**Why.** Claude Code can be run plain or with plugins, tool servers and settings on top (each of these is a "harness"). Claims that one setup is better are hard to check. Benchy gives every harness the same instruction file and nothing else, then measures the result against hidden tests the harness never sees, so two harnesses can be compared on numbers, not impressions.
+
+**How to use it.**
+
+```sh
+cargo install --path .
+benchy doctor harnesses/claude-code.toml   # check that everything needed is installed
+benchy run harnesses/claude-code.toml      # run the harness, score it and write the report
+```
+
+Read `results/<harness>/<run-id>/report.md`. To compare harnesses, run each one and paste their `scorecard.tsv` lines into one spreadsheet. The rest of this file gives the details.
+
+## What you get
 ## What you get
 
 One run produces three files in `results/<harness>/<run-id>/`:
