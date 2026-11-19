@@ -1,0 +1,7 @@
+# Scaling probe: rest book_size orders that never trade, then run the same number of adds,
+# cancels, amends and queries on each book. Time per operation is the time of probe-SIZE.in
+# less the time of probe-SIZE-base.in, divided by operations.
+# Write them with: benchy gen scaling --out DIR
+seed = 404
+operations = 2000000
+book_sizes = [1000, 10000, 100000, 1000000]

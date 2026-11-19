@@ -1,0 +1,80 @@
+# Differential fuzz: short independent streams, each restricted to one feature set.
+# Stream i goes to set i modulo the number of sets, so an engine with one broken feature
+# still matches the reference on every set that leaves the feature out.
+# Write them with: benchy gen fuzz --out DIR --reference ENGINE
+seed = 20261118
+streams = 2000
+min_lines = 20
+max_lines = 60
+
+[[set]]
+name = "limit"
+features = []
+
+[[set]]
+name = "market"
+features = ["market"]
+
+[[set]]
+name = "ioc"
+features = ["ioc"]
+
+[[set]]
+name = "fok"
+features = ["fok"]
+
+[[set]]
+name = "post-only"
+features = ["post-only"]
+
+[[set]]
+name = "iceberg"
+features = ["iceberg"]
+
+[[set]]
+name = "cancel"
+features = ["cancel"]
+
+[[set]]
+name = "amend"
+features = ["amend"]
+
+[[set]]
+name = "self-trade"
+features = ["self-trade", "market", "ioc"]
+
+[[set]]
+name = "queries"
+features = ["queries"]
+
+[[set]]
+name = "tick-lot"
+features = ["tick-lot", "amend"]
+
+[[set]]
+name = "symbols"
+features = ["symbols", "queries"]
+
+[[set]]
+name = "parsing"
+features = ["parsing"]
+
+[[set]]
+name = "rejections"
+features = ["rejections", "cancel"]
+
+[[set]]
+name = "iceberg-amend-queries"
+features = ["iceberg", "amend", "queries"]
+
+[[set]]
+name = "fok-iceberg-self-trade"
+features = ["fok", "iceberg", "self-trade"]
+
+[[set]]
+name = "orders-cancel-queries"
+features = ["market", "ioc", "fok", "post-only", "cancel", "queries"]
+
+[[set]]
+name = "everything"
+features = ["market", "ioc", "fok", "post-only", "iceberg", "cancel", "amend", "self-trade", "queries", "tick-lot", "symbols", "parsing", "rejections"]

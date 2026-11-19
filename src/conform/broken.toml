@@ -1,0 +1,154 @@
+# Deliberately broken variants of the Rust reference engine, at least one for each feature group.
+# Each change replaces text that occurs exactly once in the reference file. The suite must fail
+# every variant, and at least one failing session must be in the variant's own group.
+
+[[variant]]
+name = "line-limit-one-short"
+group = "parsing"
+[[variant.change]]
+file = "src/parse.rs"
+find = "const MAX_LINE_BYTES: usize = 256;"
+replace = "const MAX_LINE_BYTES: usize = 255;"
+
+[[variant]]
+name = "symbol-redefined"
+group = "symbols"
+[[variant.change]]
+file = "src/lib.rs"
+find = "if self.books.contains_key(&symbol) {"
+replace = "if false {"
+
+[[variant]]
+name = "display-lot-unchecked"
+group = "tick-lot"
+[[variant.change]]
+file = "src/lib.rs"
+find = "check_multiple(display, book.lot, RejectCode::InvalidQty)?;"
+replace = ""
+
+[[variant]]
+name = "queue-last-in-first-out"
+group = "priority"
+[[variant.change]]
+file = "src/book.rs"
+find = "level.queue.insert(sequence, id);"
+replace = "level.queue.insert(u64::MAX - sequence, id);"
+
+[[variant]]
+name = "trade-at-taker-price"
+group = "limit"
+[[variant.change]]
+file = "src/book.rs"
+find = """
+                symbol: self.symbol,
+                price,
+"""
+replace = """
+                symbol: self.symbol,
+                price: taker.limit.unwrap_or(price),
+"""
+
+[[variant]]
+name = "market-remainder-rests"
+group = "market"
+[[variant.change]]
+file = "src/lib.rs"
+find = "self.enter(&order, &taker(&order, None), Remainder::Drops, events);"
+replace = "self.enter(&order, &taker(&order, None), Remainder::Rests { price: 1, peak: None }, events);"
+
+[[variant]]
+name = "ioc-remainder-rests"
+group = "ioc"
+[[variant.change]]
+file = "src/lib.rs"
+find = "TimeInForce::GoodTillCancel | TimeInForce::PostOnly =>"
+replace = "TimeInForce::GoodTillCancel | TimeInForce::PostOnly | TimeInForce::ImmediateOrCancel =>"
+[[variant.change]]
+file = "src/lib.rs"
+find = "TimeInForce::ImmediateOrCancel | TimeInForce::FillOrKill =>"
+replace = "TimeInForce::FillOrKill =>"
+
+[[variant]]
+name = "fok-counts-own-orders"
+group = "fok"
+[[variant.change]]
+file = "src/book.rs"
+find = "if order.owner != taker.owner {"
+replace = "if true {"
+
+[[variant]]
+name = "post-only-may-trade"
+group = "post-only"
+[[variant.change]]
+file = "src/lib.rs"
+find = "if tif == TimeInForce::PostOnly && book.would_trade(order.side, price) {"
+replace = "if false {"
+
+[[variant]]
+name = "self-trade-allowed"
+group = "self-trade"
+[[variant.change]]
+file = "src/book.rs"
+find = "if maker.owner == taker.owner {"
+replace = "if false {"
+
+[[variant]]
+name = "refill-keeps-priority"
+group = "iceberg"
+[[variant.change]]
+file = "src/book.rs"
+find = """
+        self.leave_level(id);
+        let order = self.orders.get_mut(&id).expect("the maker is live");
+"""
+replace = """
+        let order = self.orders.get_mut(&id).expect("the maker is live");
+"""
+[[variant.change]]
+file = "src/book.rs"
+find = """
+        order.hidden -= refill;
+        self.join_back(id);
+"""
+replace = """
+        order.hidden -= refill;
+        self.levels_mut(side).get_mut(&price).expect("level").displayed += refill;
+"""
+
+[[variant]]
+name = "cancel-leaves-order"
+group = "cancel"
+[[variant.change]]
+file = "src/book.rs"
+find = "self.orders.contains_key(&id).then(|| self.remove(id))"
+replace = "self.orders.get(&id).map(|order| order.open())"
+
+[[variant]]
+name = "amend-always-keeps-priority"
+group = "amend"
+[[variant.change]]
+file = "src/book.rs"
+find = "let keeps_priority = price == order.price && qty <= order.open();"
+replace = "let keeps_priority = price == order.price;"
+
+[[variant]]
+name = "level-counts-one-order"
+group = "queries"
+[[variant.change]]
+file = "src/book.rs"
+find = "orders: level.queue.len(),"
+replace = "orders: 1,"
+
+[[variant]]
+name = "quantity-checked-before-price"
+group = "rejections"
+[[variant.change]]
+file = "src/lib.rs"
+find = """
+                check_multiple(price, book.tick, RejectCode::InvalidPrice)?;
+                check_multiple(order.qty, book.lot, RejectCode::InvalidQty)?;
+                if tif"""
+replace = """
+                check_multiple(order.qty, book.lot, RejectCode::InvalidQty)?;
+                check_multiple(price, book.tick, RejectCode::InvalidPrice)?;
+                if tif"""

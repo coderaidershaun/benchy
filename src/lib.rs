@@ -1,14 +1,4 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+//! Benchy measures which Claude Code harness builds the best matching engine for the least cost and time.
+//! The library holds the shared file formats; the `benchy` program declares the modules that do each step.
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+pub mod contract;

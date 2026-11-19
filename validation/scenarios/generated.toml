@@ -1,0 +1,68 @@
+# Generated golden sessions (gen-*.in). Session k of a group adds the k-th feature of the
+# generator's list to the group's features, so each group meets every other feature.
+# Their .out files come from the Rust reference. Files named hand-* are written by hand
+# from the spec, with expected output derived by reading the spec.
+# Rewrite them with: benchy gen golden --out validation/scenarios --reference ENGINE
+seed = 777
+sessions_per_group = 16
+lines = 40
+
+[[group]]
+name = "parsing"
+features = ["parsing"]
+
+[[group]]
+name = "symbols"
+features = ["symbols", "queries"]
+
+[[group]]
+name = "tick-lot"
+features = ["tick-lot"]
+
+[[group]]
+name = "priority"
+features = ["cancel", "queries"]
+
+[[group]]
+name = "limit"
+features = ["queries"]
+
+[[group]]
+name = "market"
+features = ["market"]
+
+[[group]]
+name = "ioc"
+features = ["ioc"]
+
+[[group]]
+name = "fok"
+features = ["fok"]
+
+[[group]]
+name = "post-only"
+features = ["post-only"]
+
+[[group]]
+name = "self-trade"
+features = ["self-trade"]
+
+[[group]]
+name = "iceberg"
+features = ["iceberg"]
+
+[[group]]
+name = "cancel"
+features = ["cancel"]
+
+[[group]]
+name = "amend"
+features = ["amend"]
+
+[[group]]
+name = "queries"
+features = ["queries"]
+
+[[group]]
+name = "rejections"
+features = ["rejections"]

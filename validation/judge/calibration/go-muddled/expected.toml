@@ -1,0 +1,10 @@
+# Known levels for this sample, agreed by two reviewers against the anchors.
+language = "go"
+
+[levels]
+"G.self_evidence" = 0
+"G.comment_quality" = 1
+"H.api_design" = 1
+"H.idiom" = 1
+"E.unrequested" = 2
+"I.claims" = 0

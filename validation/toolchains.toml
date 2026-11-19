@@ -1,0 +1,22 @@
+# Pinned toolchains: the versions TASK.md names, the images the scorer builds from, and the analysers it runs.
+# benchy doctor checks the host and the scorer image against this file.
+
+version = "0.1.0"
+
+[rust]
+version = "1.97.1"
+image = "rust:1.97.1"
+
+[go]
+version = "1.27.4"
+image = "golang:1.27.4"
+
+[dotnet]
+version = "10.0.404"
+target_framework = "net10.0"
+image = "mcr.microsoft.com/dotnet/sdk:10.0.404"
+
+[staticcheck]
+version = "2026.2.2"
+module_version = "v0.8.2"
+install = "go install honnef.co/go/tools/cmd/staticcheck@v0.8.2"

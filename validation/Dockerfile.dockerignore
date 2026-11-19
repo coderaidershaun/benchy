@@ -1,0 +1,9 @@
+*
+!Cargo.toml
+!Cargo.lock
+!src
+!task
+!validation
+**/target
+**/bin
+**/obj

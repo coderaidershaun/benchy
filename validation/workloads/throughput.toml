@@ -1,0 +1,22 @@
+# Throughput workloads. Each one runs for at least 5 seconds on the Rust reference.
+# Write one with: benchy gen throughput NAME --out FILE
+[[workload]]
+name = "mix"
+shape = "mix"
+seed = 101
+lines = 10000000
+symbols = 8
+
+[[workload]]
+name = "sweep"
+shape = "sweep"
+seed = 202
+lines = 10000000
+symbols = 4
+
+[[workload]]
+name = "depth-and-fok"
+shape = "depth-and-fok"
+seed = 303
+lines = 10000000
+symbols = 4

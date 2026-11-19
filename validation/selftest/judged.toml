@@ -1,0 +1,11 @@
+# Judged levels that benchy selftest uses in place of calling the judge, so the self-test costs nothing.
+# They are assumed levels for the reviewed references, not judge output. Every synthetic workspace gets the same
+# levels, so the orderings test only what is measured: a judge could lower a variant, never raise it above these.
+
+[levels]
+"E.unrequested" = 4
+"G.self_evidence" = 4
+"G.comment_quality" = 4
+"H.api_design" = 4
+"H.idiom" = 4
+"I.claims" = 4

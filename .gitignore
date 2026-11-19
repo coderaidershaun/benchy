@@ -1,1 +1,16 @@
 /target
+.rex
+.scratch
+
+# rex:ignore superrex
+.claude/settings.local.json
+/.claude/worktrees/
+/.rex/rex.db*
+/.rex/events.jsonl
+/.rex/orchestrators/
+/.rex/plans/
+/.rex/worktrees/
+/.rex/live/
+.runs/
+bin/
+obj/

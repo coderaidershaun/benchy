@@ -1,0 +1,1071 @@
+{
+  "schema": 1,
+  "run_id": "5d3a9c1e7f20",
+  "label": "claude-code",
+  "date": "2026-11-18T09:00:00.000Z",
+  "versions": {
+    "task": "unversioned",
+    "rubric": "0.1.0",
+    "judge_model": "claude-opus-5-5",
+    "claude_code": "2.1.327",
+    "benchy": "fixture",
+    "scorer_image": "sha256:5e1d0c0ffee",
+    "workspace": "9c1f0e2a7b3d"
+  },
+  "isolation": "clean-config",
+  "validity": {
+    "status": "valid",
+    "completion": "finished",
+    "audit_flags": 0,
+    "operator_replies": 0,
+    "uncommitted_work": true,
+    "notes": [
+      "rust: category D (Tests the harness wrote) was not measured and scores 0",
+      "go: category D (Tests the harness wrote) was not measured and scores 0",
+      "csharp: dotnet build failed: CS0246 in Engine/Program.cs",
+      "csharp: category A (Correctness) was not measured and scores 0",
+      "csharp: category B (Robustness) was not measured and scores 0",
+      "csharp: category C (Performance) was not measured and scores 0",
+      "csharp: category D (Tests the harness wrote) was not measured and scores 0",
+      "csharp: category F (Static maintainability) was not measured and scores 0",
+      "csharp: did not build, so categories A, B, C, D score 0"
+    ]
+  },
+  "headline": {
+    "quality": 29.8607604,
+    "quality_mean": 49.767934000000004,
+    "quality_lowest": 0.0,
+    "lowest_language": "csharp",
+    "cost_usd": 46.2637,
+    "busy_seconds": 5420.0,
+    "efficiency": null,
+    "overall": null
+  },
+  "languages": [
+    {
+      "language": "rust",
+      "build": "built",
+      "golden_pass_rate": 0.98,
+      "correctness_factor": 1.0,
+      "total": 83.592222,
+      "categories": [
+        {
+          "category": "A",
+          "earned": 44.39,
+          "max": 45.0
+        },
+        {
+          "category": "B",
+          "earned": 4.9399999999999995,
+          "max": 5.0
+        },
+        {
+          "category": "C",
+          "earned": 7.733333,
+          "max": 8.0
+        },
+        {
+          "category": "D",
+          "earned": 0.0,
+          "max": 12.0
+        },
+        {
+          "category": "E",
+          "earned": 7.65,
+          "max": 8.0
+        },
+        {
+          "category": "F",
+          "earned": 6.628889,
+          "max": 7.0
+        },
+        {
+          "category": "G",
+          "earned": 4.5,
+          "max": 6.0
+        },
+        {
+          "category": "H",
+          "earned": 5.5,
+          "max": 6.0
+        },
+        {
+          "category": "I",
+          "earned": 2.25,
+          "max": 3.0
+        }
+      ],
+      "metrics": [
+        {
+          "key": "A.golden",
+          "raw": 0.98,
+          "points": 26.46,
+          "max": 27.0
+        },
+        {
+          "key": "A.fuzz",
+          "raw": 0.995,
+          "points": 13.93,
+          "max": 14.0
+        },
+        {
+          "key": "A.invariants",
+          "raw": 1.0,
+          "points": 4.0,
+          "max": 4.0
+        },
+        {
+          "key": "B.no_crash",
+          "raw": 1.0,
+          "points": 2.0,
+          "max": 2.0
+        },
+        {
+          "key": "B.rejections",
+          "raw": 0.97,
+          "points": 0.94,
+          "max": 1.0
+        },
+        {
+          "key": "B.exit_code",
+          "raw": 1.0,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "B.memory_bound",
+          "raw": 1.0,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "C.throughput",
+          "raw": 1.1,
+          "points": 3.0,
+          "max": 3.0
+        },
+        {
+          "key": "C.scaling",
+          "raw": 0.3,
+          "points": 3.733333,
+          "max": 4.0
+        },
+        {
+          "key": "C.peak_memory",
+          "raw": 1.2,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "D.pass_stable",
+          "raw": null,
+          "points": 0.0,
+          "max": 2.0
+        },
+        {
+          "key": "D.mutation",
+          "raw": null,
+          "points": 0.0,
+          "max": 5.0
+        },
+        {
+          "key": "D.mix",
+          "raw": null,
+          "points": 0.0,
+          "max": 2.0
+        },
+        {
+          "key": "D.test_ratio",
+          "raw": null,
+          "points": 0.0,
+          "max": 1.0
+        },
+        {
+          "key": "D.kill_density",
+          "raw": null,
+          "points": 0.0,
+          "max": 1.0
+        },
+        {
+          "key": "D.suite_time",
+          "raw": null,
+          "points": 0.0,
+          "max": 0.5
+        },
+        {
+          "key": "D.assertion_free",
+          "raw": null,
+          "points": 0.0,
+          "max": 0.5
+        },
+        {
+          "key": "E.production_lines",
+          "raw": 1.4,
+          "points": 2.75,
+          "max": 3.0
+        },
+        {
+          "key": "E.runtime_deps",
+          "raw": 0.0,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "E.duplication",
+          "raw": 0.02,
+          "points": 2.0,
+          "max": 2.0
+        },
+        {
+          "key": "E.unused_code",
+          "raw": 1.0,
+          "points": 0.9,
+          "max": 1.0
+        },
+        {
+          "key": "E.unrequested",
+          "raw": 4.0,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "F.lint",
+          "raw": 0.5,
+          "points": 1.9,
+          "max": 2.0
+        },
+        {
+          "key": "F.format",
+          "raw": 0.0,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "F.complexity",
+          "raw": 0.03,
+          "points": 1.888889,
+          "max": 2.0
+        },
+        {
+          "key": "F.hazards",
+          "raw": 0.4,
+          "points": 1.84,
+          "max": 2.0
+        },
+        {
+          "key": "G.self_evidence",
+          "raw": 3.0,
+          "points": 2.25,
+          "max": 3.0
+        },
+        {
+          "key": "G.comment_quality",
+          "raw": 3.0,
+          "points": 2.25,
+          "max": 3.0
+        },
+        {
+          "key": "H.api_design",
+          "raw": 3.0,
+          "points": 1.5,
+          "max": 2.0
+        },
+        {
+          "key": "H.idiom",
+          "raw": 4.0,
+          "points": 2.0,
+          "max": 2.0
+        },
+        {
+          "key": "H.build_contract",
+          "raw": 1.0,
+          "points": 2.0,
+          "max": 2.0
+        },
+        {
+          "key": "I.hygiene",
+          "raw": 0.75,
+          "points": 1.5,
+          "max": 2.0
+        },
+        {
+          "key": "I.claims",
+          "raw": 3.0,
+          "points": 0.75,
+          "max": 1.0
+        }
+      ],
+      "groups": [
+        {
+          "group": "amend",
+          "passed": 25,
+          "total": 25
+        },
+        {
+          "group": "cancel",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "fok",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "iceberg",
+          "passed": 23,
+          "total": 23
+        },
+        {
+          "group": "ioc",
+          "passed": 18,
+          "total": 20
+        },
+        {
+          "group": "limit",
+          "passed": 16,
+          "total": 20
+        },
+        {
+          "group": "market",
+          "passed": 20,
+          "total": 20
+        },
+        {
+          "group": "parsing",
+          "passed": 21,
+          "total": 21
+        },
+        {
+          "group": "post-only",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "priority",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "queries",
+          "passed": 20,
+          "total": 20
+        },
+        {
+          "group": "rejections",
+          "passed": 21,
+          "total": 21
+        },
+        {
+          "group": "self-trade",
+          "passed": 21,
+          "total": 21
+        },
+        {
+          "group": "symbols",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "tick-lot",
+          "passed": 18,
+          "total": 18
+        }
+      ],
+      "comment_density": 0.11
+    },
+    {
+      "language": "go",
+      "build": "built",
+      "golden_pass_rate": 0.86,
+      "correctness_factor": 0.7999999999999999,
+      "total": 65.71158,
+      "categories": [
+        {
+          "category": "A",
+          "earned": 39.82,
+          "max": 45.0
+        },
+        {
+          "category": "B",
+          "earned": 4.8,
+          "max": 5.0
+        },
+        {
+          "category": "C",
+          "earned": 4.1981936,
+          "max": 8.0
+        },
+        {
+          "category": "D",
+          "earned": 0.0,
+          "max": 12.0
+        },
+        {
+          "category": "E",
+          "earned": 4.36,
+          "max": 8.0
+        },
+        {
+          "category": "F",
+          "earned": 4.2666664,
+          "max": 7.0
+        },
+        {
+          "category": "G",
+          "earned": 3.0,
+          "max": 6.0
+        },
+        {
+          "category": "H",
+          "earned": 3.06672,
+          "max": 6.0
+        },
+        {
+          "category": "I",
+          "earned": 2.1999999999999997,
+          "max": 3.0
+        }
+      ],
+      "metrics": [
+        {
+          "key": "A.golden",
+          "raw": 0.86,
+          "points": 23.22,
+          "max": 27.0
+        },
+        {
+          "key": "A.fuzz",
+          "raw": 0.9,
+          "points": 12.6,
+          "max": 14.0
+        },
+        {
+          "key": "A.invariants",
+          "raw": 1.0,
+          "points": 4.0,
+          "max": 4.0
+        },
+        {
+          "key": "B.no_crash",
+          "raw": 1.0,
+          "points": 2.0,
+          "max": 2.0
+        },
+        {
+          "key": "B.rejections",
+          "raw": 0.9,
+          "points": 0.8,
+          "max": 1.0
+        },
+        {
+          "key": "B.exit_code",
+          "raw": 1.0,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "B.memory_bound",
+          "raw": 1.0,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "C.throughput",
+          "raw": 2.0,
+          "points": 1.8575424,
+          "max": 3.0
+        },
+        {
+          "key": "C.scaling",
+          "raw": 0.6,
+          "points": 1.7066663999999998,
+          "max": 4.0
+        },
+        {
+          "key": "C.peak_memory",
+          "raw": 2.0,
+          "points": 0.6339847999999999,
+          "max": 1.0
+        },
+        {
+          "key": "D.pass_stable",
+          "raw": null,
+          "points": 0.0,
+          "max": 2.0
+        },
+        {
+          "key": "D.mutation",
+          "raw": null,
+          "points": 0.0,
+          "max": 5.0
+        },
+        {
+          "key": "D.mix",
+          "raw": null,
+          "points": 0.0,
+          "max": 2.0
+        },
+        {
+          "key": "D.test_ratio",
+          "raw": null,
+          "points": 0.0,
+          "max": 1.0
+        },
+        {
+          "key": "D.kill_density",
+          "raw": null,
+          "points": 0.0,
+          "max": 1.0
+        },
+        {
+          "key": "D.suite_time",
+          "raw": null,
+          "points": 0.0,
+          "max": 0.5
+        },
+        {
+          "key": "D.assertion_free",
+          "raw": null,
+          "points": 0.0,
+          "max": 0.5
+        },
+        {
+          "key": "E.production_lines",
+          "raw": 1.9,
+          "points": 1.2,
+          "max": 3.0
+        },
+        {
+          "key": "E.runtime_deps",
+          "raw": 0.0,
+          "points": 0.7999999999999999,
+          "max": 1.0
+        },
+        {
+          "key": "E.duplication",
+          "raw": 0.06,
+          "points": 1.2,
+          "max": 2.0
+        },
+        {
+          "key": "E.unused_code",
+          "raw": 3.0,
+          "points": 0.5599999999999999,
+          "max": 1.0
+        },
+        {
+          "key": "E.unrequested",
+          "raw": 3.0,
+          "points": 0.6,
+          "max": 1.0
+        },
+        {
+          "key": "F.lint",
+          "raw": 2.0,
+          "points": 1.28,
+          "max": 2.0
+        },
+        {
+          "key": "F.format",
+          "raw": 0.0,
+          "points": 0.7999999999999999,
+          "max": 1.0
+        },
+        {
+          "key": "F.complexity",
+          "raw": 0.08,
+          "points": 1.0666664,
+          "max": 2.0
+        },
+        {
+          "key": "F.hazards",
+          "raw": 1.5,
+          "points": 1.1199999999999999,
+          "max": 2.0
+        },
+        {
+          "key": "G.self_evidence",
+          "raw": 3.0,
+          "points": 1.7999999999999998,
+          "max": 3.0
+        },
+        {
+          "key": "G.comment_quality",
+          "raw": 2.0,
+          "points": 1.2,
+          "max": 3.0
+        },
+        {
+          "key": "H.api_design",
+          "raw": 2.0,
+          "points": 0.7999999999999999,
+          "max": 2.0
+        },
+        {
+          "key": "H.idiom",
+          "raw": 3.0,
+          "points": 1.2,
+          "max": 2.0
+        },
+        {
+          "key": "H.build_contract",
+          "raw": 0.6667,
+          "points": 1.06672,
+          "max": 2.0
+        },
+        {
+          "key": "I.hygiene",
+          "raw": 1.0,
+          "points": 1.5999999999999999,
+          "max": 2.0
+        },
+        {
+          "key": "I.claims",
+          "raw": 3.0,
+          "points": 0.6,
+          "max": 1.0
+        }
+      ],
+      "groups": [
+        {
+          "group": "amend",
+          "passed": 25,
+          "total": 25
+        },
+        {
+          "group": "cancel",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "fok",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "iceberg",
+          "passed": 23,
+          "total": 23
+        },
+        {
+          "group": "ioc",
+          "passed": 12,
+          "total": 20
+        },
+        {
+          "group": "limit",
+          "passed": 10,
+          "total": 20
+        },
+        {
+          "group": "market",
+          "passed": 8,
+          "total": 20
+        },
+        {
+          "group": "parsing",
+          "passed": 21,
+          "total": 21
+        },
+        {
+          "group": "post-only",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "priority",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "queries",
+          "passed": 8,
+          "total": 20
+        },
+        {
+          "group": "rejections",
+          "passed": 21,
+          "total": 21
+        },
+        {
+          "group": "self-trade",
+          "passed": 21,
+          "total": 21
+        },
+        {
+          "group": "symbols",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "tick-lot",
+          "passed": 18,
+          "total": 18
+        }
+      ],
+      "comment_density": 0.31
+    },
+    {
+      "language": "csharp",
+      "build": "failed",
+      "golden_pass_rate": 0.0,
+      "correctness_factor": 0.0,
+      "total": 0.0,
+      "categories": [
+        {
+          "category": "A",
+          "earned": 0.0,
+          "max": 45.0
+        },
+        {
+          "category": "B",
+          "earned": 0.0,
+          "max": 5.0
+        },
+        {
+          "category": "C",
+          "earned": 0.0,
+          "max": 8.0
+        },
+        {
+          "category": "D",
+          "earned": 0.0,
+          "max": 12.0
+        },
+        {
+          "category": "E",
+          "earned": 0.0,
+          "max": 8.0
+        },
+        {
+          "category": "F",
+          "earned": 0.0,
+          "max": 7.0
+        },
+        {
+          "category": "G",
+          "earned": 0.0,
+          "max": 6.0
+        },
+        {
+          "category": "H",
+          "earned": 0.0,
+          "max": 6.0
+        },
+        {
+          "category": "I",
+          "earned": 0.0,
+          "max": 3.0
+        }
+      ],
+      "metrics": [
+        {
+          "key": "A.golden",
+          "raw": null,
+          "points": 0.0,
+          "max": 27.0
+        },
+        {
+          "key": "A.fuzz",
+          "raw": null,
+          "points": 0.0,
+          "max": 14.0
+        },
+        {
+          "key": "A.invariants",
+          "raw": null,
+          "points": 0.0,
+          "max": 4.0
+        },
+        {
+          "key": "B.no_crash",
+          "raw": null,
+          "points": 0.0,
+          "max": 2.0
+        },
+        {
+          "key": "B.rejections",
+          "raw": null,
+          "points": 0.0,
+          "max": 1.0
+        },
+        {
+          "key": "B.exit_code",
+          "raw": null,
+          "points": 0.0,
+          "max": 1.0
+        },
+        {
+          "key": "B.memory_bound",
+          "raw": null,
+          "points": 0.0,
+          "max": 1.0
+        },
+        {
+          "key": "C.throughput",
+          "raw": null,
+          "points": 0.0,
+          "max": 3.0
+        },
+        {
+          "key": "C.scaling",
+          "raw": null,
+          "points": 0.0,
+          "max": 4.0
+        },
+        {
+          "key": "C.peak_memory",
+          "raw": null,
+          "points": 0.0,
+          "max": 1.0
+        },
+        {
+          "key": "D.pass_stable",
+          "raw": null,
+          "points": 0.0,
+          "max": 2.0
+        },
+        {
+          "key": "D.mutation",
+          "raw": null,
+          "points": 0.0,
+          "max": 5.0
+        },
+        {
+          "key": "D.mix",
+          "raw": null,
+          "points": 0.0,
+          "max": 2.0
+        },
+        {
+          "key": "D.test_ratio",
+          "raw": null,
+          "points": 0.0,
+          "max": 1.0
+        },
+        {
+          "key": "D.kill_density",
+          "raw": null,
+          "points": 0.0,
+          "max": 1.0
+        },
+        {
+          "key": "D.suite_time",
+          "raw": null,
+          "points": 0.0,
+          "max": 0.5
+        },
+        {
+          "key": "D.assertion_free",
+          "raw": null,
+          "points": 0.0,
+          "max": 0.5
+        },
+        {
+          "key": "E.production_lines",
+          "raw": null,
+          "points": 0.0,
+          "max": 3.0
+        },
+        {
+          "key": "E.runtime_deps",
+          "raw": null,
+          "points": 0.0,
+          "max": 1.0
+        },
+        {
+          "key": "E.duplication",
+          "raw": null,
+          "points": 0.0,
+          "max": 2.0
+        },
+        {
+          "key": "E.unused_code",
+          "raw": null,
+          "points": 0.0,
+          "max": 1.0
+        },
+        {
+          "key": "E.unrequested",
+          "raw": 3.0,
+          "points": 0.0,
+          "max": 1.0
+        },
+        {
+          "key": "F.lint",
+          "raw": null,
+          "points": 0.0,
+          "max": 2.0
+        },
+        {
+          "key": "F.format",
+          "raw": null,
+          "points": 0.0,
+          "max": 1.0
+        },
+        {
+          "key": "F.complexity",
+          "raw": null,
+          "points": 0.0,
+          "max": 2.0
+        },
+        {
+          "key": "F.hazards",
+          "raw": null,
+          "points": 0.0,
+          "max": 2.0
+        },
+        {
+          "key": "G.self_evidence",
+          "raw": 2.0,
+          "points": 0.0,
+          "max": 3.0
+        },
+        {
+          "key": "G.comment_quality",
+          "raw": 2.0,
+          "points": 0.0,
+          "max": 3.0
+        },
+        {
+          "key": "H.api_design",
+          "raw": 2.0,
+          "points": 0.0,
+          "max": 2.0
+        },
+        {
+          "key": "H.idiom",
+          "raw": 2.0,
+          "points": 0.0,
+          "max": 2.0
+        },
+        {
+          "key": "H.build_contract",
+          "raw": null,
+          "points": 0.0,
+          "max": 2.0
+        },
+        {
+          "key": "I.hygiene",
+          "raw": null,
+          "points": 0.0,
+          "max": 2.0
+        },
+        {
+          "key": "I.claims",
+          "raw": 1.0,
+          "points": 0.0,
+          "max": 1.0
+        }
+      ]
+    }
+  ],
+  "telemetry": {
+    "source": "transcripts",
+    "claude_code_versions": [
+      "2.1.327"
+    ],
+    "cost_usd": 46.2637,
+    "transcript_cost_usd": 46.6,
+    "external_spend_usd": 0.0,
+    "time": {
+      "busy_seconds": 5420.0,
+      "wall_seconds": 7310.0,
+      "agent_seconds": 11880.0,
+      "rate_limit_seconds": 42.0,
+      "human_wait_seconds": 0.0,
+      "started": "2026-11-18T09:00:00.000Z",
+      "ended": "2026-11-18T11:01:50.000Z"
+    },
+    "tokens": [
+      {
+        "model": "claude-opus-5-5",
+        "input": 4200,
+        "output": 310000,
+        "thinking": 52000,
+        "cache_read": 41000000,
+        "cache_write_5m": 1900000,
+        "cache_write_1h": 0
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "input": 900,
+        "output": 88000,
+        "thinking": 9000,
+        "cache_read": 6200000,
+        "cache_write_5m": 400000,
+        "cache_write_1h": 0
+      }
+    ],
+    "agents": [
+      {
+        "id": "s1",
+        "agent_type": "main",
+        "model": "claude-opus-5-5",
+        "depth": 0,
+        "tokens": 38000000,
+        "busy_seconds": 5300.0,
+        "started": "2026-11-18T09:00:00.000Z",
+        "ended": "2026-11-18T11:01:50.000Z"
+      },
+      {
+        "id": "a1",
+        "parent": "s1",
+        "agent_type": "general-purpose",
+        "model": "claude-sonnet-5-5",
+        "depth": 1,
+        "tokens": 4100000,
+        "busy_seconds": 3300.0,
+        "started": "2026-11-18T09:20:00.000Z",
+        "ended": "2026-11-18T10:15:00.000Z"
+      },
+      {
+        "id": "a2",
+        "parent": "s1",
+        "agent_type": "general-purpose",
+        "model": "claude-sonnet-5-5",
+        "depth": 1,
+        "tokens": 3500000,
+        "busy_seconds": 3280.0,
+        "started": "2026-11-18T09:21:00.000Z",
+        "ended": "2026-11-18T10:16:00.000Z"
+      }
+    ],
+    "activity": {
+      "sessions": 1,
+      "subagents": 2,
+      "max_depth": 1,
+      "peak_concurrency": 3,
+      "turns": 612,
+      "tool_calls": {
+        "Agent": 2,
+        "Bash": 240,
+        "Edit": 130,
+        "Read": 180,
+        "Write": 41
+      },
+      "build_invocations": 58,
+      "test_invocations": 44,
+      "api_errors": 2,
+      "retries": 2,
+      "operator_replies": 0,
+      "premature_done_claims": 0
+    }
+  },
+  "manifest": {
+    "schema": 1,
+    "label": "claude-code",
+    "description": "Plain Claude Code, the baseline that every harness is compared with.",
+    "entry": "{prompt}",
+    "launch": "headless",
+    "permission_mode": "bypassPermissions",
+    "auth": "api-key",
+    "isolation": "clean-config",
+    "claude_code": {
+      "version": "2.1.327",
+      "model": "claude-opus-5-5",
+      "effort": "high"
+    }
+  }
+}

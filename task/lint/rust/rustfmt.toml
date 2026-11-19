@@ -1,0 +1,2 @@
+# Formatting rules for make lint-rust: the default rustfmt style.
+style_edition = "2024"

@@ -1,0 +1,16 @@
+# Arguments that make lint-rust passes to clippy, one on each line. Lines that start with # are ignored.
+-Dwarnings
+-Wclippy::all
+-Wclippy::cloned_instead_of_copied
+-Wclippy::explicit_iter_loop
+-Wclippy::implicit_clone
+-Wclippy::inefficient_to_string
+-Wclippy::manual_let_else
+-Wclippy::match_same_arms
+-Wclippy::needless_pass_by_value
+-Wclippy::redundant_closure_for_method_calls
+-Wclippy::redundant_else
+-Wclippy::semicolon_if_nothing_returned
+-Wclippy::trivially_copy_pass_by_ref
+-Wclippy::unnested_or_patterns
+-Wclippy::unused_self

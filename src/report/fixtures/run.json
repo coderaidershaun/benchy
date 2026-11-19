@@ -1,0 +1,26 @@
+{
+  "id": "5d3a9c1e7f20",
+  "label": "claude-code",
+  "run_dir": "/runs/5d3a9c1e7f20",
+  "task_pack": "/benchy/task",
+  "created": "2026-11-18T08:59:58.000Z",
+  "launch": {
+    "started": "2026-11-18T09:00:00.000Z",
+    "ended": "2026-11-18T11:02:00.000Z",
+    "max_budget_usd": 100.0,
+    "time_limit_seconds": 14400,
+    "exit_code": 0,
+    "hit_time_limit": false,
+    "result_subtype": "success",
+    "reported_cost_usd": 46.6
+  },
+  "finish": {
+    "ended": "2026-11-18T11:03:00.000Z",
+    "head": "9c1f0e2a7b3d",
+    "branch": "main",
+    "uncommitted": [
+      "?? notes.txt"
+    ],
+    "audit_findings": 0
+  }
+}

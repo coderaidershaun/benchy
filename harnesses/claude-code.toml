@@ -1,0 +1,16 @@
+# The control: plain Claude Code with no plugins, no tool servers and no settings of its own.
+# Every other harness is worth its difference from this one.
+
+schema = 1
+label = "claude-code"
+description = "Plain Claude Code, the baseline that every harness is compared with."
+entry = "{prompt}"
+launch = "headless"
+permission_mode = "bypassPermissions"
+auth = "api-key"
+isolation = "clean-config"
+
+[claude_code]
+version = "2.1.327"
+model = "claude-opus-5-5"
+effort = "high"

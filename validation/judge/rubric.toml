@@ -1,0 +1,83 @@
+# The judge's anchored rubric: one item for each judged metric of validation/rubric.toml, a level from 0 to 4,
+# and a written anchor for each level. Anchors follow the Rust API Guidelines, Effective Go and the .NET
+# Framework Design Guidelines, not one team's house style. A change here changes the prompt hash of every judged run.
+
+version = "0.1.0"
+
+[[item]]
+key = "G.self_evidence"
+name = "Self-evidence"
+question = "With every comment ignored, can a competent reader follow the code? Are names exact, and do types carry meaning (price, quantity and order id as distinct types)?"
+guides = "Rust API Guidelines C-CASE, C-NEWTYPE; Effective Go: Names; .NET Design Guidelines: Naming Guidelines"
+anchors = [
+  "0: The code cannot be followed without running it: names are single letters or misleading, and raw integers and strings stand for every domain value.",
+  "1: Most functions need their comments to be understood; names are vague (data, handle, process) and domain values are bare primitives.",
+  "2: The main flow can be followed, but some names mislead or are abbreviated, and domain values are mostly primitives with no distinct types.",
+  "3: Names are exact and the flow reads top to bottom; a few domain values still share one primitive type, or one function needs its comment.",
+  "4: Every name says what the thing is or does in the domain's words, domain values have distinct types, and no function needs a comment to be followed.",
+]
+
+[[item]]
+key = "G.comment_quality"
+name = "Comment quality"
+question = "Do comments explain why, not what? Is there narration, stale notes, or chatter about the editing process? Is the code over-commented?"
+guides = "Rust API Guidelines C-CRATE-DOC, C-EXAMPLE; Effective Go: Commentary; .NET Design Guidelines: XML documentation"
+anchors = [
+  "0: Comments are wrong or describe code that is gone, or nearly every line restates itself in a comment.",
+  "1: Most comments restate what the code does, or narrate the editing process (now, changed, fixed, step 3).",
+  "2: Comments are a mix: some explain why, many restate what, and some public items carry filler documentation.",
+  "3: Comments mostly explain why or warn of a trap; a few restate the obvious or are missing where a hidden constraint lives.",
+  "4: Every comment states a reason, a constraint or a trap that the code cannot say, public documentation adds what the signature cannot, and nothing is narration.",
+]
+
+[[item]]
+key = "H.api_design"
+name = "API design"
+question = "Is the core library hard to misuse? Are illegal states unrepresentable? Are errors meaningful values?"
+guides = "Rust API Guidelines C-VALIDATE, C-GOOD-ERR, C-CUSTOM-TYPE; Effective Go: Errors; .NET Design Guidelines: Exceptions, Member Design"
+anchors = [
+  "0: There is no library boundary: parsing, matching and output are one block, and failures are silent or crash the program.",
+  "1: The library exists, but callers can put it in a broken state easily, and errors are strings or magic numbers.",
+  "2: The library has a usable surface, but some illegal states are representable and some errors lose their cause.",
+  "3: The library is hard to misuse and errors are typed values with context; one or two operations allow a state the spec forbids.",
+  "4: Illegal states cannot be built, every operation returns a typed result or error that a caller can act on, and the surface is the smallest the spec needs.",
+]
+
+[[item]]
+key = "H.idiom"
+name = "Idiom"
+question = "Does each implementation read as native to its language, or as one language transliterated into another?"
+guides = "Rust API Guidelines (whole); Effective Go (whole); .NET Design Guidelines: General Naming Conventions, Type Design"
+anchors = [
+  "0: The code fights the language: patterns of another language are forced in, and standard tools of this one are ignored.",
+  "1: The code is mostly transliterated from another language, with foreign naming, error handling or structure.",
+  "2: The code is ordinary for the language in places, but error handling, naming or collections often follow another language.",
+  "3: The code reads as native, with a few constructs that an experienced author of the language would write differently.",
+  "4: The code reads as written by an experienced author of the language: its standard library, error idiom, naming and layout conventions throughout.",
+]
+
+[[item]]
+key = "E.unrequested"
+name = "Unrequested work"
+question = "Are there features outside the spec, or abstraction that nobody needed?"
+guides = "Effective Go: Interfaces (accept small interfaces); Rust API Guidelines C-STRUCT-PRIVATE; .NET Design Guidelines: Designing for Extensibility"
+anchors = [
+  "0: Large features outside the spec, or layers of abstraction that each have one implementation and no reason.",
+  "1: Several features outside the spec, or several abstractions with one implementation.",
+  "2: One feature outside the spec, or some abstraction that the code does not need.",
+  "3: Nothing outside the spec, with one small abstraction that has no second use.",
+  "4: Everything present is asked for by the spec, and every abstraction has a reason in the code.",
+]
+
+[[item]]
+key = "I.claims"
+name = "Claims"
+question = "Does DELIVERY.md say truly what was built, what is incomplete, and how to build and test it?"
+guides = "Plan section 3.1: DELIVERY.md states what was built, what is incomplete, and how to build and test"
+anchors = [
+  "0: DELIVERY.md is missing, or claims work that is plainly absent.",
+  "1: DELIVERY.md claims more than the code shows, or hides a gap that the code makes obvious.",
+  "2: DELIVERY.md is mostly accurate but vague about what is incomplete or how to build and test.",
+  "3: DELIVERY.md is accurate and says how to build and test; one gap or limit is left unsaid.",
+  "4: DELIVERY.md states exactly what was built, every known gap, and build and test commands that match the code.",
+]

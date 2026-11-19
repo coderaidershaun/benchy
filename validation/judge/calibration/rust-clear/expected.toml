@@ -1,0 +1,10 @@
+# Known levels for this sample, agreed by two reviewers against the anchors.
+language = "rust"
+
+[levels]
+"G.self_evidence" = 4
+"G.comment_quality" = 4
+"H.api_design" = 3
+"H.idiom" = 4
+"E.unrequested" = 4
+"I.claims" = 4

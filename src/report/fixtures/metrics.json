@@ -1,0 +1,426 @@
+{
+  "schema": 1,
+  "workspace": "9c1f0e2a7b3d",
+  "scorer_image": "sha256:5e1d0c0ffee",
+  "languages": [
+    {
+      "language": "rust",
+      "build": "built",
+      "golden_pass_rate": 0.98,
+      "metrics": [
+        {
+          "key": "A.golden",
+          "raw": 0.98,
+          "points": 26.46,
+          "max": 27.0
+        },
+        {
+          "key": "A.fuzz",
+          "raw": 0.995,
+          "points": 13.93,
+          "max": 14.0
+        },
+        {
+          "key": "A.invariants",
+          "raw": 1.0,
+          "points": 4.0,
+          "max": 4.0
+        },
+        {
+          "key": "B.no_crash",
+          "raw": 1.0,
+          "points": 2.0,
+          "max": 2.0
+        },
+        {
+          "key": "B.rejections",
+          "raw": 0.97,
+          "points": 0.94,
+          "max": 1.0
+        },
+        {
+          "key": "B.exit_code",
+          "raw": 1.0,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "B.memory_bound",
+          "raw": 1.0,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "C.throughput",
+          "raw": 1.1,
+          "points": 3.0,
+          "max": 3.0
+        },
+        {
+          "key": "C.scaling",
+          "raw": 0.3,
+          "points": 3.733333,
+          "max": 4.0
+        },
+        {
+          "key": "C.peak_memory",
+          "raw": 1.2,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "E.production_lines",
+          "raw": 1.4,
+          "points": 2.75,
+          "max": 3.0
+        },
+        {
+          "key": "E.runtime_deps",
+          "raw": 0,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "E.duplication",
+          "raw": 0.02,
+          "points": 2.0,
+          "max": 2.0
+        },
+        {
+          "key": "E.unused_code",
+          "raw": 1,
+          "points": 0.9,
+          "max": 1.0
+        },
+        {
+          "key": "F.lint",
+          "raw": 0.5,
+          "points": 1.9,
+          "max": 2.0
+        },
+        {
+          "key": "F.format",
+          "raw": 0,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "F.complexity",
+          "raw": 0.03,
+          "points": 1.888889,
+          "max": 2.0
+        },
+        {
+          "key": "F.hazards",
+          "raw": 0.4,
+          "points": 1.84,
+          "max": 2.0
+        },
+        {
+          "key": "H.build_contract",
+          "raw": 1.0,
+          "points": 2.0,
+          "max": 2.0
+        },
+        {
+          "key": "I.hygiene",
+          "raw": 0.75,
+          "points": 1.5,
+          "max": 2.0
+        }
+      ],
+      "groups": [
+        {
+          "group": "amend",
+          "passed": 25,
+          "total": 25
+        },
+        {
+          "group": "cancel",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "fok",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "iceberg",
+          "passed": 23,
+          "total": 23
+        },
+        {
+          "group": "ioc",
+          "passed": 18,
+          "total": 20
+        },
+        {
+          "group": "limit",
+          "passed": 16,
+          "total": 20
+        },
+        {
+          "group": "market",
+          "passed": 20,
+          "total": 20
+        },
+        {
+          "group": "parsing",
+          "passed": 21,
+          "total": 21
+        },
+        {
+          "group": "post-only",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "priority",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "queries",
+          "passed": 20,
+          "total": 20
+        },
+        {
+          "group": "rejections",
+          "passed": 21,
+          "total": 21
+        },
+        {
+          "group": "self-trade",
+          "passed": 21,
+          "total": 21
+        },
+        {
+          "group": "symbols",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "tick-lot",
+          "passed": 18,
+          "total": 18
+        }
+      ],
+      "comment_density": 0.11
+    },
+    {
+      "language": "go",
+      "build": "built",
+      "golden_pass_rate": 0.86,
+      "metrics": [
+        {
+          "key": "A.golden",
+          "raw": 0.86,
+          "points": 23.22,
+          "max": 27.0
+        },
+        {
+          "key": "A.fuzz",
+          "raw": 0.9,
+          "points": 12.6,
+          "max": 14.0
+        },
+        {
+          "key": "A.invariants",
+          "raw": 1.0,
+          "points": 4.0,
+          "max": 4.0
+        },
+        {
+          "key": "B.no_crash",
+          "raw": 1.0,
+          "points": 2.0,
+          "max": 2.0
+        },
+        {
+          "key": "B.rejections",
+          "raw": 0.9,
+          "points": 0.8,
+          "max": 1.0
+        },
+        {
+          "key": "B.exit_code",
+          "raw": 1.0,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "B.memory_bound",
+          "raw": 1.0,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "C.throughput",
+          "raw": 2.0,
+          "points": 2.321928,
+          "max": 3.0
+        },
+        {
+          "key": "C.scaling",
+          "raw": 0.6,
+          "points": 2.133333,
+          "max": 4.0
+        },
+        {
+          "key": "C.peak_memory",
+          "raw": 2.0,
+          "points": 0.792481,
+          "max": 1.0
+        },
+        {
+          "key": "E.production_lines",
+          "raw": 1.9,
+          "points": 1.5,
+          "max": 3.0
+        },
+        {
+          "key": "E.runtime_deps",
+          "raw": 0,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "E.duplication",
+          "raw": 0.06,
+          "points": 1.5,
+          "max": 2.0
+        },
+        {
+          "key": "E.unused_code",
+          "raw": 3,
+          "points": 0.7,
+          "max": 1.0
+        },
+        {
+          "key": "F.lint",
+          "raw": 2.0,
+          "points": 1.6,
+          "max": 2.0
+        },
+        {
+          "key": "F.format",
+          "raw": 0,
+          "points": 1.0,
+          "max": 1.0
+        },
+        {
+          "key": "F.complexity",
+          "raw": 0.08,
+          "points": 1.333333,
+          "max": 2.0
+        },
+        {
+          "key": "F.hazards",
+          "raw": 1.5,
+          "points": 1.4,
+          "max": 2.0
+        },
+        {
+          "key": "H.build_contract",
+          "raw": 0.6667,
+          "points": 1.3334,
+          "max": 2.0
+        },
+        {
+          "key": "I.hygiene",
+          "raw": 1.0,
+          "points": 2.0,
+          "max": 2.0
+        }
+      ],
+      "groups": [
+        {
+          "group": "amend",
+          "passed": 25,
+          "total": 25
+        },
+        {
+          "group": "cancel",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "fok",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "iceberg",
+          "passed": 23,
+          "total": 23
+        },
+        {
+          "group": "ioc",
+          "passed": 12,
+          "total": 20
+        },
+        {
+          "group": "limit",
+          "passed": 10,
+          "total": 20
+        },
+        {
+          "group": "market",
+          "passed": 8,
+          "total": 20
+        },
+        {
+          "group": "parsing",
+          "passed": 21,
+          "total": 21
+        },
+        {
+          "group": "post-only",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "priority",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "queries",
+          "passed": 8,
+          "total": 20
+        },
+        {
+          "group": "rejections",
+          "passed": 21,
+          "total": 21
+        },
+        {
+          "group": "self-trade",
+          "passed": 21,
+          "total": 21
+        },
+        {
+          "group": "symbols",
+          "passed": 19,
+          "total": 19
+        },
+        {
+          "group": "tick-lot",
+          "passed": 18,
+          "total": 18
+        }
+      ],
+      "comment_density": 0.31
+    },
+    {
+      "language": "csharp",
+      "build": "failed",
+      "golden_pass_rate": 0.0,
+      "metrics": [],
+      "notes": [
+        "dotnet build failed: CS0246 in Engine/Program.cs"
+      ]
+    }
+  ]
+}

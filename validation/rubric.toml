@@ -1,0 +1,436 @@
+# Every weight, threshold and par band that benchy scores with.
+# The tables in VALIDATION.md are generated from this file, and a test fails when they differ.
+# The numbers are provisional until the pilot freezes version 1.0.
+
+version = "0.1.0"
+status = "provisional"
+
+# Quality = mean_weight x mean of the three language scores + lowest_weight x the lowest of them.
+[quality]
+mean_weight = 0.6
+lowest_weight = 0.4
+
+# Overall = Quality x (base + efficiency_weight x Efficiency / 100).
+[overall]
+base = 0.85
+efficiency_weight = 0.15
+
+# Efficiency runs from 100 at best_factor x the baseline median to 0 at worst_factor x it, on a log scale.
+# The pilot measures the two baselines; until then Efficiency is not computed.
+[efficiency]
+cost_weight = 0.5
+time_weight = 0.5
+best_factor = 0.25
+worst_factor = 8.0
+
+# Categories C to I of a language are multiplied by clamp((p - floor) / span, 0, 1), where p is its golden pass rate.
+[correctness_scaling]
+floor = 0.5
+span = 0.45
+categories = ["C", "D", "E", "F", "G", "H", "I"]
+
+# A language that does not build from a clean checkout with the pristine Makefile scores 0 in these categories.
+[build_gate]
+categories = ["A", "B", "C", "D"]
+
+# Comment density above density caps the named metric at factor times its points.
+[comment_density]
+density = 0.25
+factor = 0.5
+metric = "G.comment_quality"
+
+# A headless run stops at either cap, is marked not finished, and Efficiency is scored at the cap.
+[caps]
+cost_usd = 100.0
+wall_hours = 4.0
+
+[judge]
+model = "claude-opus-5-5"
+samples = 3
+scale_max = 4
+
+[measurement]
+fuzz_streams = 2000
+mutants_per_language = 150
+test_runs = 5
+performance_runs = 5
+min_workload_seconds = 5.0
+max_cyclomatic = 10
+max_function_lines = 60
+max_nesting = 4
+memory_limit_mb = 512
+
+[[category]]
+id = "A"
+name = "Correctness"
+points = 45
+
+[[category.metric]]
+id = "golden"
+name = "Golden sessions"
+points = 27
+source = "measured"
+measure = "Share of hidden golden sessions passed, averaged over feature groups"
+scale = "linear"
+full = 1.0
+zero = 0.0
+
+[[category.metric]]
+id = "fuzz"
+name = "Differential fuzz"
+points = 14
+source = "measured"
+measure = "Share of seeded short streams whose output is byte-identical to the reference"
+scale = "linear"
+full = 1.0
+zero = 0.0
+
+[[category.metric]]
+id = "invariants"
+name = "Determinism and invariants"
+points = 4
+source = "measured"
+measure = "Share of determinism and book-invariant checks passed"
+scale = "linear"
+full = 1.0
+zero = 0.0
+
+[[category]]
+id = "B"
+name = "Robustness"
+points = 5
+
+[[category.metric]]
+id = "no_crash"
+name = "No crash"
+points = 2
+source = "measured"
+measure = "Share of hostile inputs that the program survives"
+scale = "linear"
+full = 1.0
+zero = 0.5
+
+[[category.metric]]
+id = "rejections"
+name = "Correct rejection"
+points = 1
+source = "measured"
+measure = "Share of hostile lines that get the rejection code the protocol states"
+scale = "linear"
+full = 1.0
+zero = 0.5
+
+[[category.metric]]
+id = "exit_code"
+name = "Clean exit"
+points = 1
+source = "measured"
+measure = "Share of hostile inputs after which the program exits with code 0"
+scale = "linear"
+full = 1.0
+zero = 0.5
+
+[[category.metric]]
+id = "memory_bound"
+name = "Bounded memory"
+points = 1
+source = "measured"
+measure = "1 when peak memory on every hostile input stays under memory_limit_mb, else 0"
+scale = "linear"
+full = 1.0
+zero = 0.0
+
+[[category]]
+id = "C"
+name = "Performance"
+points = 8
+
+[[category.metric]]
+id = "throughput"
+name = "Throughput"
+points = 3
+source = "measured"
+measure = "Median run time on the throughput workloads, as a multiple of the language's reference"
+scale = "log"
+full = 1.25
+zero = 10.0
+
+[[category.metric]]
+id = "scaling"
+name = "Scaling"
+points = 4
+source = "measured"
+measure = "Growth exponent of time per operation as the book grows"
+scale = "linear"
+full = 0.25
+zero = 1.0
+
+[[category.metric]]
+id = "peak_memory"
+name = "Peak memory"
+points = 1
+source = "measured"
+measure = "Peak resident memory, as a multiple of the language's reference"
+scale = "log"
+full = 1.5
+zero = 6.0
+
+[[category]]
+id = "D"
+name = "Tests the harness wrote"
+points = 12
+
+[[category.metric]]
+id = "pass_stable"
+name = "Pass and stable"
+points = 2
+source = "measured"
+measure = "1 when the suite passes every one of test_runs runs, Go also shuffled and with the race detector, else 0"
+scale = "linear"
+full = 1.0
+zero = 0.0
+
+[[category.metric]]
+id = "mutation"
+name = "Mutation score"
+points = 5
+source = "measured"
+measure = "Share of compilable sampled mutants that the language's make test target detects"
+scale = "linear"
+full = 0.8
+zero = 0.0
+
+[[category.metric]]
+id = "mix"
+name = "Mix of kinds"
+points = 2
+source = "measured"
+measure = "Share of the three kinds present: unit tests of book logic, end-to-end tests through the program, invariant or property tests"
+scale = "linear"
+full = 1.0
+zero = 0.0
+
+[[category.metric]]
+id = "test_ratio"
+name = "Test-to-code ratio"
+points = 1
+source = "measured"
+measure = "Test lines per production line"
+scale = "linear"
+full = 2.5
+zero = 6.0
+
+[[category.metric]]
+id = "kill_density"
+name = "Kills per 100 test lines"
+points = 1
+source = "measured"
+measure = "Mutants killed per 100 test lines"
+scale = "linear"
+full = 10.0
+zero = 2.0
+
+[[category.metric]]
+id = "suite_time"
+name = "Suite run time"
+points = 0.5
+source = "measured"
+measure = "Seconds that one run of the suite takes, build excluded"
+scale = "log"
+full = 10.0
+zero = 120.0
+
+[[category.metric]]
+id = "assertion_free"
+name = "Tests with no assertion"
+points = 0.5
+source = "measured"
+measure = "Share of tests that assert nothing"
+scale = "linear"
+full = 0.0
+zero = 0.2
+
+[[category]]
+id = "E"
+name = "Economy"
+points = 8
+
+[[category.metric]]
+id = "production_lines"
+name = "Production lines"
+points = 3
+source = "measured"
+measure = "Production lines without blanks, comments and tests, as a multiple of the language's reference"
+scale = "linear"
+full = 1.3
+zero = 2.5
+
+[[category.metric]]
+id = "runtime_deps"
+name = "Runtime dependencies"
+points = 1
+source = "measured"
+measure = "Direct runtime dependencies"
+scale = "linear"
+full = 2.0
+zero = 6.0
+
+[[category.metric]]
+id = "duplication"
+name = "Duplication"
+points = 2
+source = "measured"
+measure = "Share of production lines in duplicated blocks"
+scale = "linear"
+full = 0.03
+zero = 0.15
+
+[[category.metric]]
+id = "unused_code"
+name = "Unused code"
+points = 1
+source = "measured"
+measure = "Unused items that the compiler and analysers report"
+scale = "linear"
+full = 0.0
+zero = 10.0
+
+[[category.metric]]
+id = "unrequested"
+name = "Unrequested work"
+points = 1
+source = "judged"
+measure = "Judge level for features outside the spec and abstraction nobody needed"
+scale = "linear"
+full = 4.0
+zero = 0.0
+
+[[category]]
+id = "F"
+name = "Static maintainability"
+points = 7
+
+[[category.metric]]
+id = "lint"
+name = "Lint findings"
+points = 2
+source = "measured"
+measure = "Findings of the published lint configuration per 1,000 production lines"
+scale = "linear"
+full = 0.0
+zero = 10.0
+
+[[category.metric]]
+id = "format"
+name = "Formatting"
+points = 1
+source = "measured"
+measure = "Files that the formatter would change"
+scale = "linear"
+full = 0.0
+zero = 1.0
+
+[[category.metric]]
+id = "complexity"
+name = "Complexity"
+points = 2
+source = "measured"
+measure = "Share of functions over max_cyclomatic, max_function_lines or max_nesting"
+scale = "linear"
+full = 0.02
+zero = 0.2
+
+[[category.metric]]
+id = "hazards"
+name = "Hazards"
+points = 2
+source = "measured"
+measure = "Hazards per 1,000 production lines: bare unwrap, stubs, discarded errors, empty catch blocks, lint suppressions, unsafe"
+scale = "linear"
+full = 0.0
+zero = 5.0
+
+[[category]]
+id = "G"
+name = "Readability and comments"
+points = 6
+
+[[category.metric]]
+id = "self_evidence"
+name = "Self-evidence"
+points = 3
+source = "judged"
+measure = "Judge level: with comments ignored, a competent reader can follow the code"
+scale = "linear"
+full = 4.0
+zero = 0.0
+
+[[category.metric]]
+id = "comment_quality"
+name = "Comment quality"
+points = 3
+source = "judged"
+measure = "Judge level: comments explain why, not what, with no narration and no over-commenting"
+scale = "linear"
+full = 4.0
+zero = 0.0
+
+[[category]]
+id = "H"
+name = "Ergonomics and design"
+points = 6
+
+[[category.metric]]
+id = "api_design"
+name = "API design"
+points = 2
+source = "judged"
+measure = "Judge level: the core library is hard to misuse and errors are meaningful values"
+scale = "linear"
+full = 4.0
+zero = 0.0
+
+[[category.metric]]
+id = "idiom"
+name = "Idiom"
+points = 2
+source = "judged"
+measure = "Judge level: the code reads as native to its language"
+scale = "linear"
+full = 4.0
+zero = 0.0
+
+[[category.metric]]
+id = "build_contract"
+name = "Build and program contract"
+points = 2
+source = "measured"
+measure = "Share of three checks passed: DELIVERY.md commands run as written, help text exists, the core library does no input or output"
+scale = "linear"
+full = 1.0
+zero = 0.0
+
+[[category]]
+id = "I"
+name = "Delivery"
+points = 3
+
+[[category.metric]]
+id = "hygiene"
+name = "Hygiene"
+points = 2
+source = "measured"
+measure = "Share of four checks passed: work committed on the default branch, no uncommitted work, no stray files or build output, lockfiles present"
+scale = "linear"
+full = 1.0
+zero = 0.0
+
+[[category.metric]]
+id = "claims"
+name = "Claims"
+points = 1
+source = "judged"
+measure = "Judge level: DELIVERY.md matches what the scorer measured"
+scale = "linear"
+full = 4.0
+zero = 0.0

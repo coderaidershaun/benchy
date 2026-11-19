@@ -1,0 +1,295 @@
+{
+  "model": "claude-opus-5-5",
+  "prompt_hash": "fixture",
+  "samples": 3,
+  "items": [
+    {
+      "language": "rust",
+      "key": "E.unrequested",
+      "levels": [
+        4,
+        4,
+        4
+      ],
+      "median": 4,
+      "spread": 0,
+      "evidence": [
+        "rust/src/book.rs:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "rust",
+      "key": "G.self_evidence",
+      "levels": [
+        3,
+        3,
+        4
+      ],
+      "median": 3,
+      "spread": 1,
+      "evidence": [
+        "rust/src/book.rs:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "rust",
+      "key": "G.comment_quality",
+      "levels": [
+        2,
+        3,
+        3
+      ],
+      "median": 3,
+      "spread": 1,
+      "evidence": [
+        "rust/src/book.rs:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "rust",
+      "key": "H.api_design",
+      "levels": [
+        3,
+        3,
+        4
+      ],
+      "median": 3,
+      "spread": 1,
+      "evidence": [
+        "rust/src/book.rs:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "rust",
+      "key": "H.idiom",
+      "levels": [
+        4,
+        4,
+        4
+      ],
+      "median": 4,
+      "spread": 0,
+      "evidence": [
+        "rust/src/book.rs:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "rust",
+      "key": "I.claims",
+      "levels": [
+        3,
+        3,
+        4
+      ],
+      "median": 3,
+      "spread": 1,
+      "evidence": [
+        "rust/src/book.rs:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "go",
+      "key": "E.unrequested",
+      "levels": [
+        3,
+        3,
+        4
+      ],
+      "median": 3,
+      "spread": 1,
+      "evidence": [
+        "go/book/book.go:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "go",
+      "key": "G.self_evidence",
+      "levels": [
+        3,
+        3,
+        4
+      ],
+      "median": 3,
+      "spread": 1,
+      "evidence": [
+        "go/book/book.go:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "go",
+      "key": "G.comment_quality",
+      "levels": [
+        1,
+        2,
+        2
+      ],
+      "median": 2,
+      "spread": 1,
+      "evidence": [
+        "go/book/book.go:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "go",
+      "key": "H.api_design",
+      "levels": [
+        2,
+        2,
+        3
+      ],
+      "median": 2,
+      "spread": 1,
+      "evidence": [
+        "go/book/book.go:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "go",
+      "key": "H.idiom",
+      "levels": [
+        3,
+        3,
+        4
+      ],
+      "median": 3,
+      "spread": 1,
+      "evidence": [
+        "go/book/book.go:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "go",
+      "key": "I.claims",
+      "levels": [
+        3,
+        3,
+        4
+      ],
+      "median": 3,
+      "spread": 1,
+      "evidence": [
+        "go/book/book.go:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "csharp",
+      "key": "E.unrequested",
+      "levels": [
+        3,
+        3,
+        4
+      ],
+      "median": 3,
+      "spread": 1,
+      "evidence": [
+        "csharp/Engine/Book.cs:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "csharp",
+      "key": "G.self_evidence",
+      "levels": [
+        2,
+        2,
+        3
+      ],
+      "median": 2,
+      "spread": 1,
+      "evidence": [
+        "csharp/Engine/Book.cs:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "csharp",
+      "key": "G.comment_quality",
+      "levels": [
+        1,
+        2,
+        2
+      ],
+      "median": 2,
+      "spread": 1,
+      "evidence": [
+        "csharp/Engine/Book.cs:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "csharp",
+      "key": "H.api_design",
+      "levels": [
+        2,
+        2,
+        3
+      ],
+      "median": 2,
+      "spread": 1,
+      "evidence": [
+        "csharp/Engine/Book.cs:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "csharp",
+      "key": "H.idiom",
+      "levels": [
+        2,
+        2,
+        3
+      ],
+      "median": 2,
+      "spread": 1,
+      "evidence": [
+        "csharp/Engine/Book.cs:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    },
+    {
+      "language": "csharp",
+      "key": "I.claims",
+      "levels": [
+        1,
+        1,
+        2
+      ],
+      "median": 1,
+      "spread": 1,
+      "evidence": [
+        "csharp/Engine/Book.cs:12",
+        "DELIVERY.md:3"
+      ],
+      "reason": "synthetic fixture judgement"
+    }
+  ]
+}

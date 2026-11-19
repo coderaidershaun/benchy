@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "super-rex": {
+      "source": {
+        "source": "github",
+        "repo": "coderaidershaun/super-rex"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "super-rex@super-rex": true
+  }
+}

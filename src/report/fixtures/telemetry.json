@@ -1,0 +1,92 @@
+{
+  "source": "transcripts",
+  "claude_code_versions": [
+    "2.1.327"
+  ],
+  "cost_usd": 46.2637,
+  "transcript_cost_usd": 46.6,
+  "external_spend_usd": 0.0,
+  "time": {
+    "busy_seconds": 5420.0,
+    "wall_seconds": 7310.0,
+    "agent_seconds": 11880.0,
+    "rate_limit_seconds": 42.0,
+    "human_wait_seconds": 0.0,
+    "started": "2026-11-18T09:00:00.000Z",
+    "ended": "2026-11-18T11:01:50.000Z"
+  },
+  "tokens": [
+    {
+      "model": "claude-opus-5-5",
+      "input": 4200,
+      "output": 310000,
+      "thinking": 52000,
+      "cache_read": 41000000,
+      "cache_write_5m": 1900000,
+      "cache_write_1h": 0
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "input": 900,
+      "output": 88000,
+      "thinking": 9000,
+      "cache_read": 6200000,
+      "cache_write_5m": 400000,
+      "cache_write_1h": 0
+    }
+  ],
+  "agents": [
+    {
+      "id": "s1",
+      "agent_type": "main",
+      "model": "claude-opus-5-5",
+      "depth": 0,
+      "tokens": 38000000,
+      "busy_seconds": 5300.0,
+      "started": "2026-11-18T09:00:00.000Z",
+      "ended": "2026-11-18T11:01:50.000Z"
+    },
+    {
+      "id": "a1",
+      "parent": "s1",
+      "agent_type": "general-purpose",
+      "model": "claude-sonnet-5-5",
+      "depth": 1,
+      "tokens": 4100000,
+      "busy_seconds": 3300.0,
+      "started": "2026-11-18T09:20:00.000Z",
+      "ended": "2026-11-18T10:15:00.000Z"
+    },
+    {
+      "id": "a2",
+      "parent": "s1",
+      "agent_type": "general-purpose",
+      "model": "claude-sonnet-5-5",
+      "depth": 1,
+      "tokens": 3500000,
+      "busy_seconds": 3280.0,
+      "started": "2026-11-18T09:21:00.000Z",
+      "ended": "2026-11-18T10:16:00.000Z"
+    }
+  ],
+  "activity": {
+    "sessions": 1,
+    "subagents": 2,
+    "max_depth": 1,
+    "peak_concurrency": 3,
+    "turns": 612,
+    "tool_calls": {
+      "Bash": 240,
+      "Edit": 130,
+      "Read": 180,
+      "Write": 41,
+      "Agent": 2
+    },
+    "build_invocations": 58,
+    "test_invocations": 44,
+    "api_errors": 2,
+    "retries": 2,
+    "operator_replies": 0,
+    "premature_done_claims": 0
+  }
+}

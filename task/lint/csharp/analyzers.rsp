@@ -1,0 +1,9 @@
+# MSBuild arguments that make lint-csharp passes to dotnet build. Lines that start with # are ignored.
+# The .NET analysers run in Recommended mode with nullable reference types enabled, and every warning fails the build.
+# The rules turned off ask for things this task does not want: localised strings, CLS compliance,
+# internal-only types, no underscores in test names, null checks that nullable types already make, and ConfigureAwait.
+-p:Nullable=enable
+-p:AnalysisLevel=latest
+-p:AnalysisMode=Recommended
+-p:TreatWarningsAsErrors=true
+-p:NoWarn=CA1014%3BCA1062%3BCA1303%3BCA1515%3BCA1707%3BCA2007

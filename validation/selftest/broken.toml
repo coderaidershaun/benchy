@@ -1,0 +1,23 @@
+# The feature that benchy selftest breaks in each reference, and the change to each reference that breaks it.
+# Self-trade prevention is one rule of the spec that every engine implements in one place. Each `find` must occur
+# exactly once in its file; the self-test stops with an error when a reference changes so that it does not.
+
+feature = "self-trade prevention"
+
+[[change]]
+language = "rust"
+file = "src/book.rs"
+find = "if maker.owner == taker.owner {"
+replace = "if maker_id == taker.id {"
+
+[[change]]
+language = "go"
+file = "matching/engine.go"
+find = "if r.owner == in.owner {"
+replace = "if r.id == in.id {"
+
+[[change]]
+language = "csharp"
+file = "Matching/Book.cs"
+find = "if (maker.Owner == incoming.Owner)"
+replace = "if (maker.Id == incoming.Id)"

@@ -1,0 +1,22 @@
+# An example plugin harness: Claude Code with the super-rex plugin installed from its marketplace.
+# Copy this file to declare another harness; keep the Claude Code version, model and auth mode of the control so the runs compare.
+
+schema = 1
+label = "super-rex"
+description = "Claude Code with the super-rex plugin, which plans, delegates and reviews work through its own agents and skills."
+entry = "{prompt}"
+launch = "headless"
+permission_mode = "bypassPermissions"
+auth = "api-key"
+isolation = "clean-config"
+
+[claude_code]
+version = "2.1.327"
+model = "claude-opus-5-5"
+effort = "high"
+
+[[plugin]]
+id = "super-rex@super-rex"
+source = "github:coderaidershaun/super-rex"
+commit = "67a202de7b5c9f00d110a530a99e233a8c92e87e"
+version = "0.10.0"
